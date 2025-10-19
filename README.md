@@ -20,7 +20,7 @@
       justify-content: space-between;
       align-items: center;
       position: sticky; top: 0; z-index: 100;
-      border-bottom: 1px solid #222;
+      border-bottom: 1px solid #222
     }
     .logo { 
       font-size: 28px; 
