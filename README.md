@@ -1,4 +1,3 @@
-
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -47,7 +46,7 @@
       max-height: 600px;
       background: 
         linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%),
-        url('https://via.placeholder.com/1920x800/1a1a1a/ffffff?text=طبيب+المعجزة') no-repeat center center/cover;
+        url('https://i.imgur.com/9JZQe1H.jpg') no-repeat center center/cover;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -429,7 +428,7 @@
   <h2 class="section-title">أحدث المسلسلات</h2>
   <div class="carousel">
     <div class="show-card" onclick="checkSubscription()">
-      <img src="https://via.placeholder.com/300x400/222/ffffff?text=طبيب+المعجزة" alt="طبيب المعجزة">
+      <img src="https://i.imgur.com/9JZQe1H.jpg" alt="طبيب المعجزة">
     </div>
   </div>
 
