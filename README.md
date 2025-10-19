@@ -1,43 +1,4 @@
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>نسمة بلاي</title>
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background-color: #000; color: #fff;
-      overflow-x: hidden;
-    }
-    header {
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky; top: 0; z-index: 100;
-      border-bottom: 1px solid #222;
-    }
-    .logo { 
-      font-size: 28px; 
-      font-weight: bold; 
-      color: #e50914; 
-      text-shadow: 0 0 8px rgba(229, 9, 20, 0.4);
-    }
-    nav a { 
-      color: #fff; 
-      text-decoration: none; 
-      margin-left: 20px; 
-      font-size: 16px; 
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    nav a:hover { 
-      color: #e50914; 
+ 
     }
 
     .hero {
