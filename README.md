@@ -20,7 +20,7 @@
       justify-content: space-between;
       align-items: center;
       position: sticky; top: 0; z-index: 100;
-      border-bottom: 1px solid #222
+      border-bottom: 1px solid #222;
     }
     .logo { 
       font-size: 28px; 
@@ -523,7 +523,7 @@
   <div id="modal">
     <div id="modal-content">
       <button id="close-modal" onclick="closeModal()">×</button>
-      <h2 id="modal-title" style="text-align:center; color:#ffd700;">الحلقة 17</h2>
+      <h2 id="modal-title" style="text-align:center; color:#ffd700;">الحلقة 18</h2>
       <div id="video-container" style="width: 100%; height: 0; padding-bottom: 56.25%; position: relative; margin: 20px 0; background: #000; border-radius: 12px; overflow: hidden;"></div>
       <h3 style="margin: 20px 0 10px; text-align: center; color: #ddd;">قائمة الحلقات:</h3>
       <ul class="episode-list" id="episodes-list"></ul>
@@ -535,10 +535,12 @@
   </footer>
 
   <script>
+    // ✅ تم إضافة الحلقة 18 هنا
     const episodes = {
       15: "https://player.vimeo.com/video/1128573436?badge=0&autopause=0&player_id=0&app_id=58479",
       16: "https://player.vimeo.com/video/1128576593?badge=0&autopause=0&player_id=0&app_id=58479",
-      17: "https://player.vimeo.com/video/1128597885?badge=0&autopause=0&player_id=0&app_id=58479"
+      17: "https://player.vimeo.com/video/1128597885?badge=0&autopause=0&player_id=0&app_id=58479",
+      18: "https://player.vimeo.com/video/1128914070?badge=0&autopause=0&player_id=0&app_id=58479" // ← الحلقة الجديدة
     };
 
     // === الإعلان (مجاني) ===
@@ -567,7 +569,8 @@
     function generateEpisodeList() {
       const list = document.getElementById('episodes-list');
       list.innerHTML = '';
-      [15, 16, 17].forEach(i => {
+      // ✅ أضفت 18 إلى القائمة
+      [15, 16, 17, 18].forEach(i => {
         const li = document.createElement('li');
         li.className = 'episode-item';
         li.textContent = String(i).padStart(2, '0');
@@ -578,8 +581,9 @@
         };
         list.appendChild(li);
       });
-      list.children[2].classList.add('active');
-      loadVideo(17);
+      // ✅ جعل الحلقة 18 نشطة افتراضيًا
+      list.children[3].classList.add('active');
+      loadVideo(18);
     }
 
     function openVideo() {
@@ -591,10 +595,11 @@
       document.getElementById('modal').style.display = 'none';
     }
 
-    // === نظام الاشتراك (يعمل 100%) ===
+    // === نظام الاشتراك (يعمل 100% مع ذاكرة مؤقتة) ===
     function checkSubscription() {
       const subscription = JSON.parse(localStorage.getItem('subscription')) || {};
       const now = new Date().getTime();
+      // ✅ التحقق من صلاحية الاشتراك (حتى بعد إعادة التحميل)
       if (subscription.expires && now < subscription.expires) {
         openVideo();
       } else {
@@ -670,6 +675,7 @@
       usedCodes.push(codeInput);
       localStorage.setItem('used_codes', JSON.stringify(usedCodes));
 
+      // ✅ حفظ وقت انتهاء الاشتراك (يعمل حتى بعد الخروج)
       const expires = new Date().getTime() + (selectedDays * 24 * 60 * 60 * 1000);
       localStorage.setItem('subscription', JSON.stringify({
         expires: expires,
