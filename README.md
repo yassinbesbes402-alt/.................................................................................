@@ -22,7 +22,7 @@
       flex-direction: column
       justify-content: center;
       align-items: center;
-      padding: 0 20px;
+      paddi
       text-align: center;
       color: white;
     }
