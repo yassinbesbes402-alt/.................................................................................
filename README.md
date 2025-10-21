@@ -20,7 +20,7 @@
         url('https://via.placeholder.com/1920x800/1a1a1a/ffffff?text=طبيب+المعجزة') no-repeat center center/cover;
       display: flex;
       flex-direction: column
-      justify-content: center;
+      justify-content: center
       align-items: center;
       paddi
       text-align: center;
