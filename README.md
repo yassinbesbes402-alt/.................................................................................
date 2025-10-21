@@ -19,7 +19,7 @@
         linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%),
         url('https://via.placeholder.com/1920x800/1a1a1a/ffffff?text=طبيب+المعجزة') no-repeat center center/cover;
       display: flex;
-      flex-direction: column;
+      flex-direction: column
       justify-content: center;
       align-items: center;
       padding: 0 20px;
