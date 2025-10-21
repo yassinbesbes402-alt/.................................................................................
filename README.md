@@ -46,7 +46,7 @@
       max-height: 600px;
       background: 
         linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%),
-        url('https://i.imgur.com/9JZQe1H.jpg') no-repeat center center/cover;
+        url('https://via.placeholder.com/1920x800/1a1a1a/ffffff?text=طبيب+المعجزة') no-repeat center center/cover;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -428,7 +428,7 @@
   <h2 class="section-title">أحدث المسلسلات</h2>
   <div class="carousel">
     <div class="show-card" onclick="checkSubscription()">
-      <img src="https://i.imgur.com/9JZQe1H.jpg" alt="طبيب المعجزة">
+      <img src="https://via.placeholder.com/300x400/222/ffffff?text=طبيب+المعجزة" alt="طبيب المعجزة">
     </div>
   </div>
 
@@ -535,12 +535,11 @@
   </footer>
 
   <script>
-    // ✅ تم إضافة الحلقة 18 هنا
     const episodes = {
       15: "https://player.vimeo.com/video/1128573436?badge=0&autopause=0&player_id=0&app_id=58479",
       16: "https://player.vimeo.com/video/1128576593?badge=0&autopause=0&player_id=0&app_id=58479",
       17: "https://player.vimeo.com/video/1128597885?badge=0&autopause=0&player_id=0&app_id=58479",
-      18: "https://player.vimeo.com/video/1128914070?badge=0&autopause=0&player_id=0&app_id=58479" // ← الحلقة الجديدة
+      18: "https://player.vimeo.com/video/1128914070?badge=0&autopause=0&player_id=0&app_id=58479"
     };
 
     // === الإعلان (مجاني) ===
@@ -569,7 +568,6 @@
     function generateEpisodeList() {
       const list = document.getElementById('episodes-list');
       list.innerHTML = '';
-      // ✅ أضفت 18 إلى القائمة
       [15, 16, 17, 18].forEach(i => {
         const li = document.createElement('li');
         li.className = 'episode-item';
@@ -581,7 +579,6 @@
         };
         list.appendChild(li);
       });
-      // ✅ جعل الحلقة 18 نشطة افتراضيًا
       list.children[3].classList.add('active');
       loadVideo(18);
     }
@@ -595,11 +592,10 @@
       document.getElementById('modal').style.display = 'none';
     }
 
-    // === نظام الاشتراك (يعمل 100% مع ذاكرة مؤقتة) ===
+    // === نظام الاشتراك (يعمل 100%) ===
     function checkSubscription() {
       const subscription = JSON.parse(localStorage.getItem('subscription')) || {};
       const now = new Date().getTime();
-      // ✅ التحقق من صلاحية الاشتراك (حتى بعد إعادة التحميل)
       if (subscription.expires && now < subscription.expires) {
         openVideo();
       } else {
@@ -675,7 +671,6 @@
       usedCodes.push(codeInput);
       localStorage.setItem('used_codes', JSON.stringify(usedCodes));
 
-      // ✅ حفظ وقت انتهاء الاشتراك (يعمل حتى بعد الخروج)
       const expires = new Date().getTime() + (selectedDays * 24 * 60 * 60 * 1000);
       localStorage.setItem('subscription', JSON.stringify({
         expires: expires,
@@ -782,5 +777,4 @@
     });
   </script>
 </body>
-</html
-
+</html>
