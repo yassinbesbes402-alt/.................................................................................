@@ -26,7 +26,7 @@
     .logo { 
       font-size: 28px; 
       font-weight: bold; 
-      color: #e50914; 
+      color: #e50914;
       text-shadow: 0 0 8px rgba(229, 9, 20, 0.4);
     }
     nav a { 
